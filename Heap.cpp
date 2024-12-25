@@ -37,7 +37,6 @@ void Heap :: Insert(Team newTeam)
 	myTree.push_back(newTeam);
 	size++;
 	BubbleUp(size);
-
 }
 
 Team Heap :: MinElement()
@@ -60,7 +59,6 @@ void Heap :: removeMin()
 	{
 		BubbleDown(root);
 	}
-
 }
 
 Team Heap :: Left(int index)
@@ -186,14 +184,12 @@ string Heap :: Print()
 
 
 
-void HeapSort(Team teamAr[],const int AR_SIZE ,Heap &myHeap)
+void HeapSort(Team teamAr[], const int AR_SIZE , Heap &myHeap)
 {
-
 	int index = 0;
 
 	while(index < AR_SIZE && !myHeap.IsEmpty())
 	{
-
 		teamAr[index] = myHeap.MinElement();
 		myHeap.removeMin();
 		index++;
@@ -204,9 +200,6 @@ void HeapSort(Team teamAr[],const int AR_SIZE ,Heap &myHeap)
 	for(int j = 0; j< AR_SIZE; j++)
 	{
 		cout << teamAr[j].getKey() << " " << teamAr[j].getName() << endl;
-
 	}
-
-
 }
 

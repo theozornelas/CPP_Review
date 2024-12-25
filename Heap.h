@@ -1,8 +1,5 @@
 /*****************************************************
  *AUTHOR         :  Osvaldo Moreno Ornelas
- *CLASS          :  CS 1D
- *SECTION        :  MW:  430p - 7:50p
- *DUE DATE       :  3/02/16
  *****************************************************/
 
 #ifndef HEAP_H_
@@ -54,9 +51,7 @@ public:
 	int RightPosition(int index);
 
 	string Print();
-
-
-
+	
 private:
 
 	vector<Team> myTree;
