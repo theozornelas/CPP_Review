@@ -1,0 +1,20 @@
+Angels
+55
+Dodgers
+22
+Tigers
+12
+Red Sox
+16
+Yankees
+123
+Padres
+44
+Royals
+69
+Giants
+24
+White Sox
+73
+Pirates
+42
