@@ -25,7 +25,7 @@
  *POST-CONDITIONS
  *	NONE
  ***********************************************************/
-void ReadFromFile(Team TeamsAr[],         //IN - array of integers
+void ReadFromFile(Team TeamsAr[],      //IN - array of integers
 		          const int ARRAY_SIZE,//IN - Size of the array
 		          string fileName)     //IN - File to get data from
 {
@@ -36,42 +36,21 @@ void ReadFromFile(Team TeamsAr[],         //IN - array of integers
 	int key;
 	string name;
 
-	//open file
-	inFile.open("input.txt");
+	inFile.open(fileName.c_str());
 
 	count = 0;
 
-	cout << endl << "Before the While Loop" << endl;
-
-	//load array
-
-	/*
-	 * the program has a problem: the infile part is not working. It is not recognicing the file
-	 */
-
-	while(inFile && count < ARRAY_SIZE)
+	while(!inFile.eof())
 	{
-
-		cout << endl << "Inside the While Loop" << endl;
-
-
-		getline(inFile,name);
+		getline(inFile, name);
 		inFile >> key;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-		cout << "The key is: "<< key << " The name is: " << name << endl;
-
-
+		inFile.ignore(numeric_limits <streamsize> :: max(), '\n');
 
 		Team newM(key,name);
-
-		cout << "The key is: "<< newM.getKey() << " The name is: " << newM.getName() << endl;
 
 		TeamsAr[count] = newM;
 		count ++;
 	}
-
-	cout << endl << "After the While Loop" << endl;
 
 	inFile.close();
 

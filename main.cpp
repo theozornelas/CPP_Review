@@ -1,8 +1,5 @@
 /*****************************************************
  *AUTHOR         :  Osvaldo Moreno Ornelas
- *CLASS          :  CS 1D
- *SECTION        :  MW:  430p - 7:50p
- *DUE DATE       :  3/02/16
  *****************************************************/
 
 #include "Heap.h"
@@ -11,9 +8,6 @@
 
 int main()
 {
-
-	PrintHeader(cout, "Priority Queue", "Osvaldo Moreno Ornelas", 'A', 6);
-
 	string instructions = "This program \n\n"
 						  "The array is sorted as the item as passed in. The data is not in a specific\n"
 						  "order in the moment of insertion\n";
@@ -24,51 +18,43 @@ int main()
 	 Heap myHeap;
 	 const int AR_SIZE = 10;
 	 Team teamAr[AR_SIZE];
+     Team testAr[AR_SIZE];
 
-	 Team Angels(55,"Angels");
+	/*
+    Team Angels(55,"Angels");
 	teamAr[0] = Angels;
-////	 myHeap.Insert(Angels);
-////
-	 Team Dodgers(22,"Dodgers");
+
+	Team Dodgers(22,"Dodgers");
 	teamAr[1] = Dodgers;
-////	 myHeap.Insert(Dodgers);
-////
-	 Team Tigers(12,"Tigers");
+
+	Team Tigers(12,"Tigers");
 	teamAr[2] = Tigers;
-////	 myHeap.Insert(Tigers);
-////
-	 Team RdSocks(16, "Red Socks");
+
+	Team RdSocks(16, "Red Socks");
 	teamAr[3] = RdSocks;
-////	 myHeap.Insert(RdSocks);
-////
-	 Team Yankees(123,"Yankees");
+
+	Team Yankees(123,"Yankees");
 	teamAr[4] = Yankees;
-////	 myHeap.Insert(Yankees);
-////
-	 Team Padres(44,"Padres");
+
+	Team Padres(44,"Padres");
 	teamAr[5] = Padres;
-////	 myHeap.Insert(Padres);
-////
-	 Team Royals(69,"Royals");
+
+	Team Royals(69,"Royals");
 	teamAr[6] = Royals;
-////	 myHeap.Insert(Royals);
-////
-	 Team Giants(24, "Giants");
+
+	Team Giants(24, "Giants");
 	teamAr[7]=  Giants;
-////	 myHeap.Insert(Giants);
-////
-	 Team WhiteS(73,"White Socks");
+
+	Team WhiteS(73,"White Socks");
 	teamAr[8] = WhiteS;
-////	 myHeap.Insert(WhiteS);
-////
-	 Team Pirates(42,"Pirates");
+
+	Team Pirates(42,"Pirates");
 	teamAr[9] = Pirates;
-//	 myHeap.Insert(Pirates);
+    */
 
-	 //string file = "input.txt";
+	string file = "/Users/osvaldomorenoornelas/Documents/Personal_Projects/CPP_Review/input.txt";
 
-	 //ReadFromFile(teamAr,AR_SIZE,file);
-
+	ReadFromFile(teamAr,AR_SIZE,file);
 
 	cout << endl << "Inserting Values into the heap" << endl;
 	 for(int i =0; i<AR_SIZE; i++)
@@ -79,23 +65,13 @@ int main()
 
 
 	cout << endl << "Printing Heap after Insert" << endl;
-	 cout << endl << myHeap.Print() << endl;
+	cout << endl << myHeap.Print() << endl;
 
-	//myHeap.removeMin();
 
 	Team newTeamAr[AR_SIZE];
 
-HeapSort(newTeamAr,AR_SIZE,myHeap);
+    HeapSort(newTeamAr,AR_SIZE,myHeap);
 
-//	int index = 0;
-//
-//	while(index < AR_SIZE && !myHeap.IsEmpty())
-//	{
-//
-//		newTeamAr[index] = myHeap.MinElement();
-//		myHeap.removeMin();
-//		index++;
-//	}
 
 	cout << endl << "Printing Array after Coping from heap" << endl;
 
@@ -106,9 +82,9 @@ HeapSort(newTeamAr,AR_SIZE,myHeap);
 
 
 	cout << endl << "Printing Heap after printing the array" << endl;
-	 cout << endl << myHeap.Print() << endl;
+	cout << endl << myHeap.Print() << endl;
 
-	 cout << "end of program" << endl;
+	cout << "end of program" << endl;
 
     return 0;
 }

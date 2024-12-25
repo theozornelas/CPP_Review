@@ -25,7 +25,6 @@ void PrintHeader(ostream& outputF, // OUT - class header to file
                  string asName,    // IN  - Assignment name
                  string programers,// IN  - Programmer(s) name
                  char asType,      // IN  - Type of project
-        //      (lab or assignment)
                  int asNum);       // IN  - Project number
 
 void Fill(ostream& outputT, //OUT - output stream
