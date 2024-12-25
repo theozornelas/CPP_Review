@@ -25,20 +25,15 @@
  *POST-CONDITIONS
  *	NONE
  ***********************************************************/
-void ReadFromFile(Team TeamsAr[],      //IN - array of integers
-		          const int ARRAY_SIZE,//IN - Size of the array
+void ReadFromFile(vector<Team>& teamV,      //IN - array of integers
 		          string fileName)     //IN - File to get data from
 {
 
 	ifstream inFile;  //IN - input file
-
-	int count;		  //CALC - for loop lcv
 	int key;
 	string name;
 
 	inFile.open(fileName.c_str());
-
-	count = 0;
 
 	while(!inFile.eof())
 	{
@@ -46,12 +41,7 @@ void ReadFromFile(Team TeamsAr[],      //IN - array of integers
 		inFile >> key;
 		inFile.ignore(numeric_limits <streamsize> :: max(), '\n');
 
-		Team newM(key,name);
-
-		TeamsAr[count] = newM;
-		count ++;
+		teamV.push_back(Team(key, name));
 	}
-
 	inFile.close();
-
 }

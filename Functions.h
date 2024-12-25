@@ -15,9 +15,8 @@ using namespace std;
 #include <sstream>
 #include "Team.h"
 
-void ReadFromFile(Team TeamsAr[],         //IN - array of integers
-		          const int ARRAY_SIZE,//IN - Size of the array
-		          string fileName);
+void ReadFromFile(vector<Team>& teamV,      //IN - array of integers
+		          string fileName);    //IN - File to get data from
 
 string InstructionHeader(string message);
 

@@ -5,73 +5,40 @@
 #include "Heap.h"
 #include "Functions.h"
 #include <fstream>
+#include <vector>
 
 int main()
 {
-	string instructions = "This program \n\n"
-						  "The array is sorted as the item as passed in. The data is not in a specific\n"
+	string instructions = "The array is sorted as the item as passed in. The data is not in a specific\n"
 						  "order in the moment of insertion\n";
 
 
 	 cout << InstructionHeader(instructions);
 
 	 Heap myHeap;
-	 const int AR_SIZE = 10;
-	 Team teamAr[AR_SIZE];
-     Team testAr[AR_SIZE];
-
-	/*
-    Team Angels(55,"Angels");
-	teamAr[0] = Angels;
-
-	Team Dodgers(22,"Dodgers");
-	teamAr[1] = Dodgers;
-
-	Team Tigers(12,"Tigers");
-	teamAr[2] = Tigers;
-
-	Team RdSocks(16, "Red Socks");
-	teamAr[3] = RdSocks;
-
-	Team Yankees(123,"Yankees");
-	teamAr[4] = Yankees;
-
-	Team Padres(44,"Padres");
-	teamAr[5] = Padres;
-
-	Team Royals(69,"Royals");
-	teamAr[6] = Royals;
-
-	Team Giants(24, "Giants");
-	teamAr[7]=  Giants;
-
-	Team WhiteS(73,"White Socks");
-	teamAr[8] = WhiteS;
-
-	Team Pirates(42,"Pirates");
-	teamAr[9] = Pirates;
-    */
+     constexpr unsigned int AR_SIZE = 10;
+     vector<Team> teamList;
+     
 
 	string file = "/Users/osvaldomorenoornelas/Documents/Personal_Projects/CPP_Review/input.txt";
 
-	ReadFromFile(teamAr,AR_SIZE,file);
+	ReadFromFile(teamList, file);
+    unsigned int size = teamList.size();
 
 	cout << endl << "Inserting Values into the heap" << endl;
-	 for(int i =0; i<AR_SIZE; i++)
+	 for(int i =0; i<size; i++)
 	 {
-		 myHeap.Insert(teamAr[i]);
-		cout << teamAr[i].getKey() << " " << teamAr[i].getName()<< endl;
+		myHeap.Insert(teamList[i]);
+		cout << teamList[i].getKey() << " " << teamList[i].getName()<< endl;
 	 }
 
 
 	cout << endl << "Printing Heap after Insert" << endl;
 	cout << endl << myHeap.Print() << endl;
 
-
 	Team newTeamAr[AR_SIZE];
 
-    HeapSort(newTeamAr,AR_SIZE,myHeap);
-
+    HeapSort(newTeamAr, AR_SIZE, myHeap);
 
 	cout << endl << "Printing Array after Coping from heap" << endl;
 
