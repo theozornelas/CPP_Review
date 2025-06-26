@@ -1,0 +1,43 @@
+***************************************************************************
+*  PROGRAMMED BY :  Osvaldo Moreno Ornelas
+*  CLASS         :  CS1D
+*  SECTION       :  MW: 4:30p - 7:50pm
+*  Assignment#15 :  Sorting
+***************************************************************************
+
+
+
+
+Already Ordered - number of statements needed to sort
+---------------------------------------------------------------------------
+Algorithm         50000             100000
+
+Selection Sort    125750            501500
+Insertion Sort    499               999
+Bubble Sort       125249            500499
+Merge Sort        2272              5044
+Heap Sort         1000              2000
+
+
+
+Reverse ordered - number of statements needed to sort
+---------------------------------------------------------------------------
+Algorithm         50000             100000
+
+Selection Sort    188250            751500
+Insertion Sort    125748            501498
+Bubble Sort       125249            500499
+Merge Sort        2272              5044
+Heap Sort         1000              2000
+
+
+
+Randomly ordered - number of statements needed to sort
+---------------------------------------------------------------------------
+Algorithm         50000             100000
+
+Selection Sort    128010            507041
+Insertion Sort    95025             373433
+Bubble Sort       125249            500499
+Merge Sort        2272              5044
+Heap Sort         1000              2000
