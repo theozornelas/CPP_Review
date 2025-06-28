@@ -56,8 +56,45 @@ int SortManager::InsertionSort(int list[], int length)
    }
    return counter;
 }
-int SortManager::BubbleSort(int list[], int length){}
-int SortManager::SelectionSort(int list[], int length){}
+int SortManager::BubbleSort(int list[], int length)
+{
+    int counter = 0;
+    if(length > 0)
+    {
+        for (int iteration = 1; iteration < length; iteration++)
+        {
+        for (int index = 0; index < length - iteration;
+             index++)
+        {
+            if (list[index] > list[index + 1])
+            {
+                int temp = list[index];
+                list[index] = list[index + 1];
+                list[index + 1] = temp;
+                counter++;
+            }
+
+            counter++;
+        }
+
+        counter++;
+       }
+    }
+}
+int SortManager::SelectionSort(int list[], int length)
+{
+    int counter = 0;
+    if(length > 0)
+    {
+        int loc, minIndex;
+        for (loc = 0; loc < length; loc++)
+        {
+            counter++;
+            minIndex = minLocation(list, loc, length - 1);
+            swap(list, loc, minIndex);
+        }
+    }
+}
 int SortManager::MergeSort(int arr[], int l, int r){}
 int SortManager::QuickSort(int arr[], int left, int right, PIVOT pivType){}
 int SortManager::Radixsort(int arr[], int n){}
