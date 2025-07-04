@@ -8,7 +8,7 @@ public:
     ~SortManager();
 
     int InsertionSort(int list[], int length);
-    int BubbleSort(int list[], int length);
+    int BubbleSort(vector<int>& list, int length);
     int SelectionSort(int list[], int length);
     int MergeSort(int arr[], int l, int r);
     int QuickSort(int arr[], int left, int right, PIVOT pivType);
@@ -56,30 +56,28 @@ int SortManager::InsertionSort(int list[], int length)
    }
    return counter;
 }
-int SortManager::BubbleSort(int list[], int length)
+int SortManager::BubbleSort(vector<int>& list, int length)
 {
     int counter = 0;
     if(length > 0)
-    {
+    {   
         for (int iteration = 1; iteration < length; iteration++)
         {
-        for (int index = 0; index < length - iteration;
-             index++)
-        {
-            if (list[index] > list[index + 1])
+            for (int index = 0; index < length - iteration; index++)
             {
-                int temp = list[index];
-                list[index] = list[index + 1];
-                list[index + 1] = temp;
+                if(list[index] > list[index + 1])
+                {
+                    int temp = list[index];
+                    list[index] = list[index + 1];
+                    list[index + 1] = temp;
+                    counter++;
+                }
                 counter++;
             }
-
             counter++;
-        }
-
-        counter++;
        }
     }
+    return counter;
 }
 int SortManager::SelectionSort(int list[], int length)
 {

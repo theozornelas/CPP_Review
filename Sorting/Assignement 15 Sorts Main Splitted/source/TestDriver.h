@@ -31,33 +31,50 @@ class TestDriver
         switch(testListType)
         {
             case SortDriverTypes::REGULAR:
-                for(int i = 0; i < testList.size(); ++i)
+                for(int i = 0; i < testList.capacity(); ++i)
                 {
-
+                    testList[i] = i+1;
                 }
             break;
+            default:
+                cout << "No Valid size type selected" << endl;
         }
     }
 
     private:
-
+    
+    void print(int swaps)
+    {
+        cout << "List contents: " << endl;
+        for(int i = 0; i<testList.capacity(); ++i)
+        {
+            cout << testList[i];
+            if(i % 5 == 0)
+            {
+                cout << endl;
+            }
+            else
+            {
+                cout << " ";
+            }
+        }
+        cout << endl;
+        cout << "Bubble sort: " << swaps << " swaps." << endl;
+    }
     vector<int> testList;
     SortManager sortAlg;
-    SortDriverTypes::LIST_TYPE   testListType;
+    SortDriverTypes::LIST_TYPE testListType;
 };
 
 
 int TestDriver::RunBubbleSort()
 { 
-    /*if(testList.size() > 0)
-    {}*/
-    int testArr[SortDriverTypes::MEDIUM];
-    for(int i = 0; i < SortDriverTypes::MEDIUM; ++i)
+    unsigned int swaps = 0;
+    if(testList.capacity() > 0)
     {
-        testArr[i] = i+1;
+        swaps = sortAlg.BubbleSort(testList, testList.capacity());
+        print(swaps);
     }
-    sortAlg.BubbleSort(testArr, SortDriverTypes::MEDIUM);
-    for (int n = 0; n < 10; ++n) //make print function (to console and file)
-    {cout << testArr[n] << endl;}
-    
+
+    return swaps;
 }

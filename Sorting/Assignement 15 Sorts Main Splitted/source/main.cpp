@@ -7,6 +7,7 @@
 
 #include "TestDriver.h"
 #include <thread>
+#include <gtest/gtest.h>
 using namespace std;
 
 int main() {
@@ -21,8 +22,11 @@ std::uniform_int_distribution<> distrib(1, SortDriverTypes::MEDIUM);
 
 TestDriver sortDriver(SortDriverTypes::MEDIUM, SortDriverTypes::REGULAR);
 
+sortDriver.InitializeList();
+
 start = clock();
 std::thread t1(&TestDriver::RunBubbleSort, &sortDriver);
+//sortDriver.RunBubbleSort();
 
 // Wait for the threads to complete
 t1.join();
