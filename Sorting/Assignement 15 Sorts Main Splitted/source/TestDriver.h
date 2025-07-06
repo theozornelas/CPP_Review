@@ -1,4 +1,6 @@
 #include "SortManager.h"
+#include <random>
+#include <time.h>
 
 namespace SortDriverTypes
 {
@@ -31,11 +33,35 @@ class TestDriver
         switch(testListType)
         {
             case SortDriverTypes::REGULAR:
+
                 for(int i = 0; i < testList.capacity(); ++i)
                 {
                     testList[i] = i+1;
                 }
             break;
+            case SortDriverTypes::RANDOM:
+
+                //Seed engine
+                std::mt19937 generator(std::random_device{}());
+                //Distribution function
+                std::uniform_int_distribution<> distrib(1, SortDriverTypes::MEDIUM);
+
+                for (int i = 0; n < testList.capacity(); ++i)
+                {
+                    testList[i] = distrib(generator);
+                }
+            break;
+
+            case SortDriverTypes::REVERSED:
+                int j = testList.capacity();
+                for(int i = 0; i < testList.capacity(); ++i)
+                {
+
+                    testList[i] = j--;
+                }
+
+            break;
+
             default:
                 cout << "No Valid size type selected" << endl;
         }

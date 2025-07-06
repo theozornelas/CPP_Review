@@ -15,24 +15,15 @@ int main() {
 clock_t start;
 clock_t end;
 
-//Seed engine
-std::mt19937 generator(std::random_device{}());
-//Distribution function
-std::uniform_int_distribution<> distrib(1, SortDriverTypes::MEDIUM);
-
 TestDriver sortDriver(SortDriverTypes::MEDIUM, SortDriverTypes::REGULAR);
 
 sortDriver.InitializeList();
 
 start = clock();
 std::thread t1(&TestDriver::RunBubbleSort, &sortDriver);
-//sortDriver.RunBubbleSort();
 
 // Wait for the threads to complete
 t1.join();
-
-/*for (int n = 0; n < MEDIUM; ++n)
-{std::cout << distrib(generator) << endl;}*/
 
 //run sorts in threads
 
